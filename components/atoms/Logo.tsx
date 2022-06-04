@@ -8,14 +8,7 @@ interface LogoProps {
 
 const Logo = ({url, alt}: LogoProps) => {
   return (
-    <Image
-        src={url}
-        layout="fill"
-        objectFit="cover"
-        className=""
-        alt={alt}
-        priority
-    />
+        <img src={url} alt={alt} className="h-full"/>
   )
 }
 
