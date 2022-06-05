@@ -4,12 +4,12 @@ import { Title } from '../atoms/Title'
 
 interface CategoriesProps {
     categories?: string[]
-    onClick?: () => void
+    onClick: (category: string) => void
 }
 
 const Categories = ({categories, onClick}: CategoriesProps) => {
   return (
-    <div className="h-[95%] w-[25%] flex flex-col items-center pb-5 rounded-lg bg-orange-800 text-white">
+    <div className="h-[95%] w-[100%] mt-[10px] lg:w-[25%] lg:mt-0 flex flex-col items-center pb-5 rounded-lg bg-orange-800 text-white">
         <Title>Categories</Title>
 
         <div className=" w-full flex justify-around flex-wrap overflow-y-scroll scrollbar">
@@ -17,7 +17,7 @@ const Categories = ({categories, onClick}: CategoriesProps) => {
                 categories?.map((category: string) => (
                     <Button
                         key={category}
-                        onClick={onClick}
+                        onClick={() => onClick(category)}
                     >
                         {category}
                     </Button>
