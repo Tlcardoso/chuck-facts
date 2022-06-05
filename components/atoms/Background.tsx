@@ -6,7 +6,7 @@ interface BackgroundProps {
 
 const Background = ({children}: BackgroundProps ) => {
   return (
-    <div className="w-full h-screen bg-slate-300">{children}</div>
+    <div className="w-full h-screen bg-slate-200">{children}</div>
   )
 }
 
