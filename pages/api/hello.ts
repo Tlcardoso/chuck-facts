@@ -22,3 +22,10 @@ export const getFactByQuery = async (query: string) => {
 
   return fact
 }
+
+export const getCategories = async () => {
+  const categories = await fetch(`${BASE_URL}/categories`)
+    .then((response) => response.json())
+
+    return categories
+}
