@@ -2,14 +2,15 @@ import React from 'react'
 
 interface ButtonProps {
     children: string
-    onClick?: () => void
+    onClick: () => void
 }
 
 const Button = ({children, onClick}: ButtonProps) => {
   return (
     <button 
         onClick={onClick} 
-        className="text-orange-800 
+        className="text-orange-800
+            w-[95%]
             bg-white
             px-5 md:px-10
             py-2 md:py-4
