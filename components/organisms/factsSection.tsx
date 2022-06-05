@@ -1,21 +1,27 @@
 import React from 'react'
+import { Categories } from '../molecules/Categories'
 import { FactsPhoto } from '../molecules/Facts'
 
 interface FactsProps {
-  onClick?: () => void
-  children: string
+  newFacts?: () => void
+  children?: string | any
+  categories?: string[]
+  factsByCategory?: any
+
 }
 
-const FactsSection = ({onClick, children}: FactsProps) => {
+const FactsSection = ({newFacts, children, categories, factsByCategory}: FactsProps) => {
   return (
-      <div className="w-full h-full flex items-center px-[5%]">
+      <div className="w-full h-full flex flex-col lg:flex-row items-center justify-between px-[5%] mt-6 w-vw h-[500px]">
         <FactsPhoto 
           url="/images/chuck-norris.png" 
           alt="chuck norris with a red shirt looking at the photo"
-          onClick={onClick}
+          onClick={newFacts}
         >
             {children}
         </FactsPhoto>
+
+        <Categories onClick={factsByCategory} categories={categories}/>
       </div>
   )
 }
