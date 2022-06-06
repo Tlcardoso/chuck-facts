@@ -12,7 +12,7 @@ interface FactsProps {
 
 const FactsSection = ({newFacts, children, categories, factsByCategory}: FactsProps) => {
   return (
-      <div className="w-full h-full flex flex-col lg:flex-row items-center justify-between px-[5%] mt-6 w-vw h-[500px]">
+      <div className="w-full h-full flex flex-col lg:flex-row items-center justify-between my-6">
         <FactsPhoto 
           url="/images/chuck-norris.png" 
           alt="chuck norris with a red shirt looking at the photo"
