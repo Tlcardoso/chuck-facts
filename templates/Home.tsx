@@ -74,7 +74,7 @@ const HomeTemplate = () => {
         </div>
 
         <div className="w-screen px-[5%]">
-          <ListSection/>
+          <ListSection facts={recordedFacts}/>
         </div>
     </Background>
   )
