@@ -31,13 +31,13 @@ const HomeTemplate = () => {
     const getDefaultFact = async () => {
       const fact = await getFact()
       setDefaultFacts(fact.value)
+      setRecordedFacts([...recordedFacts, fact])
     }
 
     getDefaultFact()
     getListCategories()
   },[])
 
-  console.log(defaultFact)
   const getANewFact = async () => {
     const fact = await getFact()
     setFactOnBanner(fact)
@@ -51,9 +51,12 @@ const HomeTemplate = () => {
   }
 
   const getANewFactByQuery = async (query: string) => {
-    const fact = await getFactByQuery(query)
-    setFactOnBanner(fact)
-    setRecordedFacts([...recordedFacts, fact])
+    if (!query || query.length < 3) return null
+
+    const facts = await getFactByQuery(query)
+    setFactOnBanner(facts.result[0])
+
+    setRecordedFacts([...recordedFacts, ...facts.result]) 
   }
 
   return (
@@ -74,7 +77,7 @@ const HomeTemplate = () => {
         </div>
 
         <div className="w-screen px-[5%]">
-          <ListSection facts={recordedFacts}/>
+          <ListSection searchClick={getANewFactByQuery} facts={recordedFacts}/>
         </div>
     </Background>
   )
