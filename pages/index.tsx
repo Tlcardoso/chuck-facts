@@ -2,15 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import { HomeTemplate } from '../templates/Home'
+import { Fact } from '../types/fact'
 import { getFact, getFactByCategory, getFactByQuery } from './api'
 
-interface Fact {
-  icon_url: string
-  id: string
-  url: string
-  value: string
-  updated_at: string
-}
+
 interface HomeTemplateProps {
   exploreFact: Fact
   factsCategories: string[]

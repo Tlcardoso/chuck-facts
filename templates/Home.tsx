@@ -4,15 +4,8 @@ import { Footer } from '../components/molecules/Footer'
 import { Header } from '../components/molecules/Header'
 import { FactsSection } from '../components/organisms/factsSection'
 import { ListSection } from '../components/organisms/listSection'
+import { Fact } from '../types/fact'
 
-
-interface Fact {
-  icon_url: string
-  id: string
-  url: string
-  value: string
-  updated_at: string
-}
 
 interface HomeTemplateProps {
   exploreFact: Fact

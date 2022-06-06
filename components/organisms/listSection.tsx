@@ -2,14 +2,8 @@ import React from 'react'
 import { Title } from '../atoms/Title'
 import { FactListCard } from '../atoms/FactListCard'
 import InputSearch from '../atoms/InputSearch'
+import { Fact } from '../../types/fact'
 
-interface Fact {
-  icon_url: string
-  id: string
-  url: string
-  value: string
-  updated_at: string
-}
 interface ListSectionProps {
   facts: Fact[]
   searchClick: (value: string) => void
