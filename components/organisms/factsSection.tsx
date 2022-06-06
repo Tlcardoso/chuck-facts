@@ -6,7 +6,7 @@ interface FactsProps {
   newFacts?: () => void
   children?: string | any
   categories?: string[]
-  factsByCategory?: any
+  factsByCategory: (category: string) => void
 
 }
 
