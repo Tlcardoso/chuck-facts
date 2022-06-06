@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Background } from '../components/atoms/Background'
 import { Footer } from '../components/molecules/Footer'
 import { Header } from '../components/molecules/Header'
 import { FactsSection } from '../components/organisms/factsSection'
 import { ListSection } from '../components/organisms/listSection'
-import { getCategories, getFact, getFactByCategory, getFactByQuery } from '../pages/api'
 
 
 interface Fact {
@@ -15,51 +14,24 @@ interface Fact {
   updated_at: string
 }
 
-const HomeTemplate = () => {
+interface HomeTemplateProps {
+  exploreFact: Fact
+  factsCategories: string[]
+  getANewFact: () => void
+  getANewFactByCategory: (category: string) => void
+  factBanner?: Fact
+  getANewFactByQuery: (query: string) => void
+  recordedFacts: Fact[]
+}
 
-  const [factOnBanner, setFactOnBanner] = useState<Fact>()
-  const [recordedFacts, setRecordedFacts] = useState<Fact[]>([])
-  const [defaultFact , setDefaultFacts] = useState<string>()
-  const [categories, setCategories] = useState<string[]>()
-
-  
-
-  useEffect(() => {
-    const getListCategories = async () => {
-      const categoriesList = await getCategories()
-      setCategories(categoriesList)
-    }
-
-    const getDefaultFact = async () => {
-      const fact = await getFact()
-      setDefaultFacts(fact.value)
-      setRecordedFacts([...recordedFacts, fact])
-    }
-
-    getDefaultFact()
-    getListCategories()
-  },[])
-
-  const getANewFact = async () => {
-    const fact = await getFact()
-    setFactOnBanner(fact)
-    setRecordedFacts([...recordedFacts, fact])
-  }
-
-  const getANewFactByCategory = async (category: string) => {
-    const fact = await getFactByCategory(category)
-    setFactOnBanner(fact)
-    setRecordedFacts([...recordedFacts, fact])
-  }
-
-  const getANewFactByQuery = async (query: string) => {
-    if (!query || query.length < 3) return null
-
-    const facts = await getFactByQuery(query)
-    setFactOnBanner(facts.result[0])
-
-    setRecordedFacts([...recordedFacts, ...facts.result]) 
-  }
+const HomeTemplate = ({
+      exploreFact, 
+      factsCategories, 
+      getANewFact, 
+      getANewFactByCategory, 
+      factBanner, 
+      getANewFactByQuery, 
+      recordedFacts}: HomeTemplateProps) => {
 
   return (
     <Background>
@@ -70,11 +42,11 @@ const HomeTemplate = () => {
 
         <div className="w-screen h-[500px] px-[5%] bg-orange-200">
             <FactsSection 
-              categories={categories} 
+              categories={factsCategories} 
               newFacts={getANewFact}
               factsByCategory={getANewFactByCategory}
             >
-                {factOnBanner?.value || defaultFact}
+                {factBanner?.value || exploreFact?.value}
             </FactsSection>
         </div>
 
@@ -88,5 +60,7 @@ const HomeTemplate = () => {
     </Background>
   )
 }
+
+
 
 export { HomeTemplate }
