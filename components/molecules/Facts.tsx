@@ -24,7 +24,7 @@ const FactsPhoto = ({ url, alt, children, onClick}: FactsProps) => {
             className="w-full h-full rounded-lg brightness-50 object-cover"
         />
 
-        <p className='absolute w-full bottom-[5%] text-sm sm:bottom-[30%] sm:text-xl font-semibold text-center px-[5%]'>
+        <p className='absolute overflow-x-clip w-full bottom-[5%] text-sm sm:bottom-[30%] sm:text-xl font-semibold text-center px-[5%]'>
             {children}
         </p>
     </div>

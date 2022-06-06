@@ -31,7 +31,7 @@ const FactListCard = ({url, alt, fact, upadateDate}: factListCardProps) => {
         alt={alt}
       />
 
-      <div className='w-[60%] text-orange-800 text-xs md:text-base'>
+      <div className='w-[60%] overflow-x-clip text-orange-800 text-xs md:text-base'>
         <p>{fact}</p>
         <p className='font-bold text-orange-900'>{date}</p>
       </div>
