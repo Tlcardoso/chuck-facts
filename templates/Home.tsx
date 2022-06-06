@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Background } from '../components/atoms/Background'
+import { Footer } from '../components/molecules/Footer'
 import { Header } from '../components/molecules/Header'
 import { FactsSection } from '../components/organisms/factsSection'
 import { ListSection } from '../components/organisms/listSection'
-import { getCategories, getFact, getFactByCategory, getFactByQuery } from '../pages/api/hello'
+import { getCategories, getFact, getFactByCategory, getFactByQuery } from '../pages/api'
+
 
 interface Fact {
   icon_url: string
@@ -78,6 +80,10 @@ const HomeTemplate = () => {
 
         <div className="w-screen px-[5%]">
           <ListSection searchClick={getANewFactByQuery} facts={recordedFacts}/>
+        </div>
+
+        <div className="mt-4">
+          <Footer/>
         </div>
     </Background>
   )
