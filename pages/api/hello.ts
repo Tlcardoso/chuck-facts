@@ -17,7 +17,7 @@ export const getFactByCategory = async (category: string) => {
 }
 
 export const getFactByQuery = async (query: string) => {
-  const fact = await fetch(`${BASE_URL}/random?query=${query}`)
+  const fact = await fetch(`${BASE_URL}/search?query=${query}`)
     .then((response) => response.json())
 
   return fact
