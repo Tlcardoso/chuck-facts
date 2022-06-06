@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import { HomeTemplate } from '../templates/Home'
@@ -6,12 +5,12 @@ import { Fact } from '../types/fact'
 import { getFact, getFactByCategory, getFactByQuery } from './api'
 
 
-interface HomeTemplateProps {
+interface HomeProps {
   exploreFact: Fact
   factsCategories: string[]
 }
 
-const Home: NextPage = ({exploreFact, factsCategories}: HomeTemplateProps) => {
+const Home = ({exploreFact, factsCategories}: HomeProps) => {
   const [factBanner, setFactBanner] = useState<Fact>()
   const [recordedFacts, setRecordedFacts] = useState<Fact[]>([exploreFact])
 
