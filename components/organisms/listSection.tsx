@@ -12,7 +12,7 @@ interface ListSectionProps {
 const ListSection = ({facts, searchClick}: ListSectionProps) => {
 
   return (
-    <div className="w-full bg-orange-800 rounded-xl flex flex-col items-center justify-center text-white">
+    <div className="w-full bg-orange-800 rounded-xl flex flex-col items-center justify-center text-white cy_search">
         <Title>List of Facts</Title>
 
         <InputSearch searchClick={searchClick}/>

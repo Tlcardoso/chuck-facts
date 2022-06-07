@@ -24,7 +24,7 @@ const FactListCard = ({url, alt, fact, upadateDate}: factListCardProps) => {
   const date = dateFormat(upadateDate)
 
   return (
-    <div className={closed ? `hidden` : `w-full h-auto bg-white rounded-full flex items-center relative mb-4`}>
+    <div className={closed ? `hidden` : `w-full h-auto bg-white rounded-full flex items-center relative mb-4 cy_card`}>
       <img 
         className='h-[70px] w-[70px] m-2 rounded-full object-cover border-4 border-orange-800' 
         src={url} 

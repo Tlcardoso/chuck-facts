@@ -11,7 +11,7 @@ interface FactsProps {
 
 const FactsPhoto = ({ url, alt, children, onClick}: FactsProps) => {
   return (
-    <div className='h-[475px] w-full lg:w-[70%] rounded-2xl relative border-8 border-orange-800 text-white '>
+    <div className='h-[475px] w-full lg:w-[70%] rounded-2xl relative border-8 border-orange-800 text-white cy_fact'>
 
         <div className="absolute z-10 mt-4 text-center w-full bg-orange-800">
             <Title>Facts</Title>

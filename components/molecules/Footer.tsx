@@ -19,8 +19,8 @@ const Footer = () => {
           <p>Thiago Cardoso</p>
         </div>
 
-        <div className='flex justify-center my-2'>
-          <a href="https://github.com/Tlcardoso">
+        <div className='flex justify-center my-2 '>
+          <a href="https://github.com/Tlcardoso" className='cy_footer'>
             <AiFillGithub className='w-[30px] h-[30px] mr-2'/>
           </a>
 

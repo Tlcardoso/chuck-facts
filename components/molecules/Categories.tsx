@@ -12,7 +12,7 @@ const Categories = ({categories, onClick}: CategoriesProps) => {
     <div className="h-[475px] w-[100%] mt-[10px] lg:w-[25%] lg:mt-0 flex flex-col items-center pb-5 rounded-lg bg-orange-800 text-white">
         <Title>Categories</Title>
 
-        <div className="w-full flex justify-around flex-wrap overflow-y-scroll scrollbar">
+        <div className="w-full flex justify-around flex-wrap overflow-y-scroll scrollbar cy_categories">
             {
                 categories?.map((category: string) => (
                     <Button
