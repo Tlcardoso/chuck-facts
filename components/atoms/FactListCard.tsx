@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
@@ -25,11 +26,17 @@ const FactListCard = ({url, alt, fact, upadateDate}: factListCardProps) => {
 
   return (
     <div className={closed ? `hidden` : `w-full h-auto bg-white rounded-full flex items-center relative mb-4 cy_card`}>
-      <img 
-        className='h-[70px] w-[70px] m-2 rounded-full object-cover border-4 border-orange-800' 
-        src={url} 
-        alt={alt}
-      />
+      <div className='h-[70px] w-[70px] m-2 rounded-full border-4 border-orange-800'>
+        <Image  
+          className='rounded-full'
+          src={url} 
+          alt={alt}
+          width="70px"
+          height="70px"
+          objectFit="cover"
+          priority
+        />
+      </div>
 
       <div className='w-[60%] overflow-x-clip text-orange-800 text-xs md:text-base'>
         <p>{fact}</p>

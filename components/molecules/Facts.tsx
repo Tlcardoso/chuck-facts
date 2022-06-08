@@ -1,6 +1,7 @@
 import React from 'react'
 import { Title } from '../atoms/Title'
 import { BsFillArrowRightSquareFill } from 'react-icons/bs'
+import Image from 'next/image'
 
 interface FactsProps {
     url: string
@@ -18,9 +19,12 @@ const FactsPhoto = ({ url, alt, children, onClick}: FactsProps) => {
             <BsFillArrowRightSquareFill onClick={onClick} className=" absolute w-10 h-10 right-6 bottom-3 cursor-pointer"/>
         </div>
         
-        <img 
+        <Image 
             src={url} 
             alt={alt} 
+            layout="fill"
+            objectFit="cover"
+            priority
             className="w-full h-full rounded-lg brightness-50 object-cover"
         />
 
